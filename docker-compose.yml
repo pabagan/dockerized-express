@@ -1,0 +1,30 @@
+version: '2'
+services:
+  web:
+    # name the created container..
+    container_name: ${APP_NAME}
+    # from that build image..
+    build: .
+    # exposing..
+    ports:
+      # use other port http://localhost:8080
+      #- "8080:8080"
+      # use other port http://localhost:49160
+      # use other port
+      - "49160:8080"
+    # and loading env into the created container..
+    env_file: .env
+
+    # Not Working now for friend node.. TODO: Troubleshooting
+    #volumes_from:
+    #  - persistent-data
+    #command: "npm start"
+
+# persistency data
+  persistent-data:
+    image: busybox
+    container_name: "docker-node-micro-data"
+    volumes:
+      - .:/usr/src/app
+    command: "true"
+

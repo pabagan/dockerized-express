@@ -1,0 +1,13 @@
+{
+  "name": "dockerized-node-micro",
+  "version": "1.0.0",
+  "description": "Micro dealing with basic Node.js stuff and Docker",
+  "author": "Pablo Aguilar Angulo <pabagan@gmail.com>",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.16.1"
+  }
+}
